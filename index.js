@@ -10,13 +10,15 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // get, post, put, delete
+function naoImplementado(req, res) {
+  res.status(501).json({ erro: 'erro nao implementado' })
+}
 
 
 //listar todas as tarefa  - get
-app.get(' /gerenciador-tarefas', (req, res) => {
-  res.status(501).json({ erro: 'erro nao implementado' })
-})
+app.get(' /gerenciador-tarefas', naoImplementado);
 //listar uma tarefa por id -get
+app.get('/gerenciador-tarefas/:id', naoImplementado);
 //cadastrar uma tarefa  -post
 //atualizar uma tarefa- put
 //remover uma tarefa -delete
