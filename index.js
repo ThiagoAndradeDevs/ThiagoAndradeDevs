@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 // get, post, put, delete
 function naoImplementado(req, res) {
-  res.status(501).json({ erro: 'erro nao implementado' })
+  res.status(501).json({ erro: 'erro nao implementado.' })
 }
 
 
@@ -20,9 +20,13 @@ app.get(' /gerenciador-tarefas', naoImplementado);
 //listar uma tarefa por id -get
 app.get('/gerenciador-tarefas/:id', naoImplementado);
 //cadastrar uma tarefa  -post
+app.post('/gerenciador-tarefas', naoImplementado);
 //atualizar uma tarefa- put
+app.put('/gerenciador-tarefas/id', naoImplementado);
 //remover uma tarefa -delete
+app.delete('/gerenciador-tarefas/:id', naoImplementado);
 //concluir uma tarefa -put
+app.put('/gerenciador-tarefas/:id/concluir', naoImplementado);
 
 
 app.listen(port, () => console.log(`Servidor inicializado na porta ${port}`));
