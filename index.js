@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 //listar todas as tarefa  - get
 app.get(' /gerenciador-tarefas', (req, res) => {
-  res.status(501).json({ erro: `erro nao implementado` })
+  res.status(501).json({ erro: 'erro nao implementado' })
 })
 //listar uma tarefa por id -get
 //cadastrar uma tarefa  -post
