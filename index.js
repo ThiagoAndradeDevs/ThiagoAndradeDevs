@@ -22,7 +22,7 @@ app.get('/gerenciador-tarefas/:id', naoImplementado);
 //cadastrar uma tarefa  -post
 app.post('/gerenciador-tarefas', naoImplementado);
 //atualizar uma tarefa- put
-app.put('/gerenciador-tarefas/id', naoImplementado);
+app.put('/gerenciador-tarefas/:id', naoImplementado);
 //remover uma tarefa -delete
 app.delete('/gerenciador-tarefas/:id', naoImplementado);
 //concluir uma tarefa -put
