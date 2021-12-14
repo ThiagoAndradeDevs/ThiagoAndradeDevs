@@ -15,8 +15,12 @@ function listarTarefasId(req, res) {
   }
   res.status(tarefa[0]);
 }
+function listarTarefa(req, res) {
+
+}
 module.exports = {
-  listarTarefasId
+  listarTarefasId,
+  listarTarefa
 }
 
 
