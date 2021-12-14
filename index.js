@@ -2,18 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { application, response } = require('express');
-const { listarTarefaId, listarTarefa, cadastrarTarefa, atualiazarTarefa, removerTarefa } = require('./controllers/gerenciador-tarefas')
+const { listarTarefaId, listarTarefa, cadastrarTarefa, atualiazarTarefa, removerTarefa, concluirTarefa } = require('./controllers/gerenciador-tarefas')
 
 
 const app = express();
 const port = 3001;
 app.use(cors());
 app.use(bodyParser.json());
-
-// get, post, put, delete
-function naoImplementado(req, res) {
-  res.status(501).json({ erro: 'erro nao implementado.' })
-}
 
 
 //listar todas as tarefa  - get
@@ -27,7 +22,7 @@ app.put('/gerenciador-tarefas/:id', atualiazarTarefa);
 //remover uma tarefa -delete
 app.delete('/gerenciador-tarefas/:id', removerTarefa);
 //concluir uma tarefa -put
-app.put('/gerenciador-tarefas/:id/concluir', naoImplementado);
+app.put('/gerenciador-tarefas/:id/concluir', concluirTarefa);
 
 
 app.listen(port, () => console.log(`Servidor inicializado na porta ${port}`));
