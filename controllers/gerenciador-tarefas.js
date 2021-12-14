@@ -39,9 +39,22 @@ function listarTarefa(req, res) {
     pagina: pagina
   })
 }
+function cadastrarTarefa(req, res) {
+  if (!req.body['nome'] && !req.body['concluida']) {
+    res.status(400).json({ erro: 'Requisiçao invalida' });
+  }
+  const tarefa = {
+    id: uuidv4(),
+    nome: req.body['nome'],
+    concluida: req.body['concluida']
+  }
+  tarefas.push(tarefa);
+  res.json(tarefa);
+}
 module.exports = {
   listarTarefasId,
-  listarTarefa
+  listarTarefa,
+  cadastrarTarefa
 }
 
 
