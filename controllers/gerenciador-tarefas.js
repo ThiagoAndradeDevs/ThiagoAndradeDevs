@@ -22,7 +22,7 @@ function listarTarefa(req, res) {
   const itensPorPagina = req.query['itensPorPagina'] || 3;
   let tarefasRetornar = tarefas.slice(0);
   // filtro
-  if (tarefasRetornar) {
+  if (filtroTarefa) {
     tarefasRetornar = tarefasRetornar.filter(
       t => t.nome.toLowerCase().indexOf(filtroTarefa.toLowerCase()) === 0);
   }
