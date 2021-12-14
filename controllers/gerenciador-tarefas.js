@@ -75,10 +75,21 @@ function atualiazarTarefa(req, res) {
     concluida: req.body['concluida']
   })
 }
+function removerTarefa(req, res) {
+  const id = req.params.id;
+  const numTarefas = tarefas.length;
+  tarefas = tarefas.filter(tarefa => tarefa.id !== id);
+  if (numTarefas === tarefas.length) {
+    res.status(404).json({ erro: 'Tarefa não encontrada' })
+    res.json({ msg: 'Tarefa removida com sucesso!' });
+  }
+}
 module.exports = {
   listarTarefasId,
   listarTarefa,
-  cadastrarTarefa, atualiazarTarefa
+  cadastrarTarefa,
+  atualiazarTarefa,
+  removerTarefa
 }
 
 
