@@ -99,6 +99,7 @@ function concluirTarefa(req, res) {
   }
   res.json({ msg: 'Tarefa concluida com sucesso!' });
 }
+
 module.exports = {
   listarTarefasId,
   listarTarefa,
